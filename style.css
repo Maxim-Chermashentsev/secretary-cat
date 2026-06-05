@@ -879,6 +879,14 @@ body {
   transform: translateX(-50%) translateY(0);
 }
 
+.heart-button.is-force-visible {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  transform: translateX(-50%) translateY(0) !important;
+}
+
 .heart-button:hover {
   background-color: #eee;
   transform: translateX(-50%) scale(1.05);

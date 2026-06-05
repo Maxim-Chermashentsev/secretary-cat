@@ -461,7 +461,7 @@ function showHeartButton() {
   heartButton.hidden = false;
   heartButton.removeAttribute("hidden");
   heartButton.style.display = "flex";
-  requestAnimationFrame(() => heartButton.classList.add("is-visible"));
+  requestAnimationFrame(() => heartButton.classList.add("is-visible", "is-force-visible"));
 }
 
 heartButton.addEventListener("click", () => {
@@ -753,6 +753,13 @@ function debugGoFinal() {
   dialogText.classList.add("is-done");
 
   showHeartButton();
+  console.log("heart debug", {
+    hidden: heartButton.hidden,
+    classes: heartButton.className,
+    rect: heartButton.getBoundingClientRect(),
+    display: window.getComputedStyle(heartButton).display,
+    opacity: window.getComputedStyle(heartButton).opacity,
+  });
 }
 
 document.addEventListener("keydown", (event) => {
