@@ -718,7 +718,9 @@ window.addEventListener("load", () => {
   window.setTimeout(typePhrase, 900);
 });
 
-// DEBUG START: quick jump to final scene. Remove this block before publishing.
+/*
+DEBUG START: quick jump to final scene. Uncomment this block for testing only.
+
 function debugGoFinal() {
   window.clearTimeout(typingTimer);
 
@@ -753,13 +755,6 @@ function debugGoFinal() {
   dialogText.classList.add("is-done");
 
   showHeartButton();
-  console.log("heart debug", {
-    hidden: heartButton.hidden,
-    classes: heartButton.className,
-    rect: heartButton.getBoundingClientRect(),
-    display: window.getComputedStyle(heartButton).display,
-    opacity: window.getComputedStyle(heartButton).opacity,
-  });
 }
 
 document.addEventListener("keydown", (event) => {
@@ -767,4 +762,6 @@ document.addEventListener("keydown", (event) => {
     debugGoFinal();
   }
 });
-// DEBUG END: quick jump to final scene.
+
+DEBUG END: quick jump to final scene.
+*/
