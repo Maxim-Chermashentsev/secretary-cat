@@ -717,3 +717,47 @@ catButton.addEventListener("keydown", (event) => {
 window.addEventListener("load", () => {
   window.setTimeout(typePhrase, 900);
 });
+
+// DEBUG START: quick jump to final scene. Remove this block before publishing.
+function debugGoFinal() {
+  window.clearTimeout(typingTimer);
+
+  step = "goodbye";
+  phraseIndex = 11;
+  letterIndex = phrases[11].length + 1;
+
+  placesForm.hidden = true;
+  placesForm.classList.remove("is-visible");
+  timeForm.hidden = true;
+  timeForm.classList.remove("is-visible");
+  timeSubmitButton.hidden = true;
+  timeSubmitButton.classList.remove("is-visible");
+  seniorDoneButton.hidden = true;
+  seniorDoneButton.classList.remove("is-visible");
+  choiceButtons.hidden = true;
+  dateMap.hidden = true;
+  dateMap.classList.remove("is-visible");
+  mapReadyButton.hidden = true;
+  mapReadyButton.classList.remove("is-visible");
+  nextButton.hidden = true;
+  nextButton.classList.remove("is-visible");
+
+  dialogBoxImage.src = "double_dialog_box.png?v=2";
+  dialogWrap.classList.add("is-final");
+  catButton.classList.add("is-senior");
+
+  finalCatWrap.hidden = false;
+  finalCatWrap.classList.add("is-visible");
+
+  dialogText.textContent = phrases[11];
+  dialogText.classList.add("is-done");
+
+  showHeartButton();
+}
+
+document.addEventListener("keydown", (event) => {
+  if (event.key.toLowerCase() === "f") {
+    debugGoFinal();
+  }
+});
+// DEBUG END: quick jump to final scene.
