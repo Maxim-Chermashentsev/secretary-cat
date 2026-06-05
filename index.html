@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>invitation site</title>
+    <link rel="icon" type="image/png" href="paws.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="date-invite" aria-label="date site">
+      <div class="ambient ambient-one"></div>
+      <div class="ambient ambient-two"></div>
+
+      <section class="scene" aria-live="polite">
+        <div class="cat-wrap" id="catButton" role="button" tabindex="0" aria-label="Нажать на кота">
+          <img
+            class="cat-manager cat-manager-primary"
+            src="cat_manager.png"
+            alt="Кот менеджер в галстуке"
+          />
+          <img
+            class="cat-manager cat-manager-secondary"
+            src="cat_manager_2.png"
+            alt="Старший секретарь Максима"
+          />
+          <div class="desk-shadow"></div>
+        </div>
+
+        <div class="dialog-wrap">
+          <img class="dialog-box" id="dialogBoxImage" src="image.png?v=3" alt="" aria-hidden="true" />
+          <div class="dialog-content">
+            <p class="message" id="dialogText"></p>
+          </div>
+        </div>
+      </section>
+
+      <div class="final-cat-wrap" id="finalCatWrap" hidden>
+        <img
+          class="final-cat"
+          src="cat_manager.png"
+          alt="Кот менеджер в галстуке"
+        />
+      </div>
+
+      <button class="next-button" type="button" id="nextButton">
+        Ну-ка, что там?
+      </button>
+
+      <a
+        class="download-link"
+        id="downloadGiftLink"
+        href="cat_flower.jpg"
+        download="cat_flower.jpg"
+        aria-hidden="true"
+        tabindex="-1"
+      ></a>
+
+      <div class="choice-buttons" id="choiceButtons" hidden>
+        <button class="choice-button yes-button" type="button" id="yesButton">
+          Да
+        </button>
+        <button class="choice-button no-button" type="button" id="noButton">
+          Нет
+        </button>
+      </div>
+
+      <div class="map-container" id="dateMap" hidden>
+        <div class="map-background"></div>
+        <div class="map-hint">Кликните на метку, чтобы посмотреть</div>
+        <div class="map-cities">
+          <div class="map-city" style="--x: 18; --y: 28; --label-width: 10em; --label-size: 1rem">
+            <span class="map-city__label">
+              <a
+                class="map-city__sign anim anim-grow"
+                href="https://yandex.ru/maps/org/yauza_place/22577398171/?ll=37.644810%2C55.751214&z=16.95"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Обед в Yauza
+              </a>
+            </span>
+          </div>
+          <div class="map-city" style="--x: 76; --y: 24; --label-width: 10.5em; --label-size: 1rem">
+            <span class="map-city__label">
+              <a
+                class="map-city__sign anim anim-slidein"
+                href="https://yandex.ru/maps/org/sempre/6531532095/?ll=37.613270%2C55.763463&z=16.95"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Обед в Sempre
+              </a>
+            </span>
+          </div>
+          <div class="map-city" style="--x: 34; --y: 68; --label-width: 15.5em; --label-size: 0.78rem">
+            <span class="map-city__label">
+              <a
+                class="map-city__sign anim anim-grow"
+                href="https://yandex.ru/maps/org/izraztsy/125486392506/?ll=37.669540%2C55.748630&z=16.95"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Обед в трапезной во дворе Спасо-Андроникова монастыря
+              </a>
+            </span>
+          </div>
+          <div class="map-city" style="--x: 61; --y: 38; --label-width: 13.5em; --label-size: 0.88rem">
+            <span class="map-city__label">
+              <a
+                class="map-city__sign anim anim-slidein"
+                href="https://yandex.ru/maps/org/aptekarskiy_ogorod_oranzhereya/149602911027/?ll=37.635934%2C55.777550&z=16.89"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Оранжерея в Аптекарском огороде
+              </a>
+            </span>
+          </div>
+          <div class="map-city" style="--x: 48; --y: 52; --label-width: 11em; --label-size: 0.95rem">
+            <span class="map-city__label">
+              <a
+                class="map-city__sign anim anim-grow"
+                href="https://yandex.ru/maps/org/art_platforma_kub/210297753915/?indoorLevel=1&ll=37.612857%2C55.757247&z=16.95"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Выставка в Cube
+              </a>
+            </span>
+          </div>
+          <div class="map-city" style="--x: 82; --y: 78; --label-width: 12em; --label-size: 0.92rem">
+            <span class="map-city__label">
+              <a
+                class="map-city__sign anim anim-slidein"
+                href="https://yandex.ru/maps/org/gosudarstvenny_darvinovskiy_muzey/1025191546/?ll=37.561526%2C55.690643&z=16.95"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Дарвиновский музей
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <button class="map-ready-button" type="button" id="mapReadyButton" hidden>
+        Я готова выбрать!
+      </button>
+
+      <form class="time-form" id="timeForm" hidden>
+        <span class="time-form__hint">Введите приблизительное время</span>
+        <label class="time-form__label" for="meetingTime">
+          Время для встречи
+        </label>
+        <span class="time-form__field">
+          <input
+            class="time-form__input"
+            id="meetingTime"
+            name="meetingTime"
+            type="text"
+            inputmode="numeric"
+            maxlength="5"
+            autocomplete="off"
+          />
+          <span class="time-form__mask" aria-hidden="true">00:00</span>
+        </span>
+      </form>
+
+      <button class="map-ready-button time-submit-button" type="button" id="timeSubmitButton" hidden>
+        Выбрано!
+      </button>
+
+      <form class="places-form" id="placesForm" hidden>
+        <p class="places-form__title">Выберите понравившиеся места</p>
+        <label class="places-form__row">
+          <span>Обед в Yauza</span>
+          <input
+            type="checkbox"
+            name="place"
+            value="Обед в Yauza"
+            data-link="https://yandex.ru/maps/org/yauza_place/22577398171/?ll=37.644810%2C55.751214&z=16.95"
+          />
+        </label>
+        <label class="places-form__row">
+          <span>Обед в Sempre</span>
+          <input
+            type="checkbox"
+            name="place"
+            value="Обед в Sempre"
+            data-link="https://yandex.ru/maps/org/sempre/6531532095/?ll=37.613270%2C55.763463&z=16.95"
+          />
+        </label>
+        <label class="places-form__row">
+          <span>Обед в трапезной во дворе Спасо-Андроникова монастыря</span>
+          <input
+            type="checkbox"
+            name="place"
+            value="Обед в трапезной во дворе Спасо-Андроникова монастыря"
+            data-link="https://yandex.ru/maps/org/izraztsy/125486392506/?ll=37.669540%2C55.748630&z=16.95"
+          />
+        </label>
+        <label class="places-form__row">
+          <span>Оранжерея в Аптекарском огороде</span>
+          <input
+            type="checkbox"
+            name="place"
+            value="Оранжерея в Аптекарском огороде"
+            data-link="https://yandex.ru/maps/org/aptekarskiy_ogorod_oranzhereya/149602911027/?ll=37.635934%2C55.777550&z=16.89"
+          />
+        </label>
+        <label class="places-form__row">
+          <span>Выставка в Cube</span>
+          <input
+            type="checkbox"
+            name="place"
+            value="Выставка в Cube"
+            data-link="https://yandex.ru/maps/org/art_platforma_kub/210297753915/?indoorLevel=1&ll=37.612857%2C55.757247&z=16.95"
+          />
+        </label>
+        <label class="places-form__row">
+          <span>Дарвиновский музей</span>
+          <input
+            type="checkbox"
+            name="place"
+            value="Дарвиновский музей"
+            data-link="https://yandex.ru/maps/org/gosudarstvenny_darvinovskiy_muzey/1025191546/?ll=37.561526%2C55.690643&z=16.95"
+          />
+        </label>
+        <label class="places-form__row">
+          <span>Прогулка в окрестностях после обеда</span>
+          <input
+            type="checkbox"
+            name="place"
+            value="Прогулка в окрестностях после обеда"
+            data-link="Без ссылки"
+          />
+        </label>
+        <label class="places-form__row">
+          <span>Обед в окрестностях выставки / оранжереи / музея</span>
+          <input
+            type="checkbox"
+            name="place"
+            value="Обед в окрестностях выставки / оранжереи / музея"
+            data-link="Без ссылки"
+          />
+        </label>
+        <button class="places-form__submit" type="submit" id="placesSubmitButton" disabled>
+          Отправить
+        </button>
+      </form>
+
+      <button class="senior-done-button" type="button" id="seniorDoneButton" hidden>
+        Готово, мистер старший секретарь
+      </button>
+
+      <button class="heart-button" type="button" id="heartButton" aria-label="Запустить сердечки" hidden>
+        <svg class="empty" viewBox="0 0 24 24" width="42" height="42" aria-hidden="true">
+          <path d="M12 21s-6.8-4.4-9.4-8.5C.8 9.7 1.4 6.2 4.1 4.5 6.2 3.2 9 3.7 12 6.6c3-2.9 5.8-3.4 7.9-2.1 2.7 1.7 3.3 5.2 1.5 8C18.8 16.6 12 21 12 21z" fill="none" stroke="rgb(255, 110, 110)" stroke-width="2" />
+        </svg>
+        <svg class="filled" viewBox="0 0 24 24" width="42" height="42" aria-hidden="true">
+          <path d="M12 21s-6.8-4.4-9.4-8.5C.8 9.7 1.4 6.2 4.1 4.5 6.2 3.2 9 3.7 12 6.6c3-2.9 5.8-3.4 7.9-2.1 2.7 1.7 3.3 5.2 1.5 8C18.8 16.6 12 21 12 21z" />
+        </svg>
+      </button>
+
+      <div class="effect-layer" id="effectLayer" aria-hidden="true"></div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
