@@ -873,10 +873,6 @@ body {
   animation: heartPulse 1.8s ease-in-out infinite;
 }
 
-.heart-button[hidden] {
-  display: none;
-}
-
 .heart-button.is-visible {
   opacity: 1;
   pointer-events: auto;

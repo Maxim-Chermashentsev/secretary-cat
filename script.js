@@ -59,7 +59,7 @@ function typePhrase({ showButton = shouldShowButton } = {}) {
 
   if (letterIndex <= phrase.length) {
     letterIndex += 1;
-    typingTimer = window.setTimeout(typePhrase, 34);
+    typingTimer = window.setTimeout(typePhrase, 45);
     return;
   }
 
@@ -448,6 +448,7 @@ function showGoodbyeScene() {
   letterIndex = 0;
   window.clearTimeout(typingTimer);
   typePhrase({ showButton: false });
+  showHeartButton();
   window.setTimeout(showHeartButton, 1200);
   window.setTimeout(showHeartButton, phrases[phraseIndex].length * 38 + 700);
 }
